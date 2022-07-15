@@ -3,13 +3,14 @@ class fruitPurchases {
     this.price = price;
     this.fruitName = fruitName;
     this.fruitsQuantity = fruitsQuantity;
-    this.totalprice = function (fruitname, quantity) {
+    this.getTotalprice = function (fruitName, quantity) {
       let total = price * quantity;
-      return `${quantity} ${fruitname} for shillings ${total}`;
+      return `${fruitsqQuantity} ${fruitName} for shillings ${total}`;
     };
   }
 }
-console.log(fruitPurchases.totalPrice());
+var fruit= new fruitPurchases(30,"Mango",3)
+console.log(fruit.getTotalPrice());
 
 class KioskCalc {
   constructor(fruit, quantity) {
@@ -21,5 +22,5 @@ class KioskCalc {
     };
   }
 }
-var kiosk = new kiosk("Orange", 2);
-console.log(KioskCalc.getTotals())
+var kiosk = new KioskCalc("Orange", 2);
+console.log(kiosk.getTotals())
