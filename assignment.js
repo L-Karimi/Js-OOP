@@ -30,8 +30,8 @@ class Mkulima {
        let productIndex= this.products.findIndex(item=>item.productId===id)
        this.farms.splice(productIndex,1)
     }
-    this.updateProduct=function(oldId,newId, newName, newPrice){
-            let yields= this.products.find(item=>item.productId===oldId)
+    this.updateProduct=function(initialId,newId, newName, newPrice){
+            let yields= this.products.find(item=>item.productId===initialId)
             yields.farmId=newId
             yields.name=newName
             yields.farmer=newPrice
@@ -47,22 +47,23 @@ class Mkulima {
      this.calculateOrderCost=function(id,quantity){
       let yields= this.products.find(item=>item.productId===id)
       console.log(`For ${quantity} of ${yields.name}, the cost of your order is ${yields.price*quantity}`)
+      console.log("For" + quantity + "of" + yields.name +",the cost of your order is " + yields.price*quantity)
       this.orders.push(yields)
       this.order
   
      }
   }
-  }
+  } 
   
-  let MkulimaPlatform= new Mkulima()
-  MkulimaPlatform.addFarm("748","Poutry farm","Beatrice","+2547748599","Tetu,Nyeri")
+  let farmerResults= new Mkulima()
+  farmerResults.addFarm("748","Poutry farm","Beatrice","+2547748599","Tetu,Nyeri")
 
-  MkulimaPlatform.addFarm("748","Hay land","Lydiah","+254706214941","Solio ranch,Laikipia")
+  farmerResults.addFarm("401","Hay land","Lydiah","+254706214941","Solio ranch,Laikipia")
   
   
-  MkulimaPlatform.updateFarm("33","738","animal farm","Kayitete","+254797916750","Nanyuki")
+  farmerResults.updateFarm("33","738","animal farm","Davis Obino","+254797916750","Nanyuki")
   
-  console.log(MkulimaPlatform.farms)
+  console.log(farmerResults.farms)
   
-  MkulimaPlatform.getFarm("33")
-  
+  farmerResults.getFarm("401")
+  console.log(farmerResults.farms)
