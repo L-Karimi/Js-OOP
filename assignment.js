@@ -12,8 +12,8 @@ class Mkulima {
          let farmIndex=this.farms.indexOf(myFarm)
          this.farms.splice(farmIndex,1)
       }
-      this.updateFarm=function(oldId,newFarmId, newName, newFarmer, newPhone, newAddress){
-              let myFarm= this.farms.find(item=>item.farmId===oldId)
+      this.updateFarm=function(initialId,newFarmId, newName, newFarmer, newPhone, newAddress){
+              let myFarm= this.farms.find(item=>item.farmId===initialId)
             //   myFarm.farmId = newFarmId
             //   myFarm.name=newName
             //   myFarm.farmer=newFarmer
@@ -36,7 +36,7 @@ class Mkulima {
             yields.name=newName
             yields.farmer=newPrice
     }
-    this.getProducta=function(id){
+    this.getProduct=function(id){
       console.log(this.products.find(product=>product.farmId===id))
      }
   
@@ -67,3 +67,4 @@ class Mkulima {
   
   farmerResults.getFarm("401")
   console.log(farmerResults.farms)
+farmerResults.removeFarm("33")
